@@ -1,0 +1,30 @@
+
+
+#map {
+    position: fixed;
+    right: 0px;
+    width: 25%;
+    height:97%;
+    background-color: grey;
+}
+#terminal {
+    background-color: black;
+    color: white;
+    width: 73.5%;
+    font-family: monospace;
+    padding-left: 1.5%;
+    padding-top: .5%;
+    margin-bottom: 2%;
+    overflow: auto;
+
+}
+#text-input {
+    position:fixed;
+    bottom: 1.44%;
+    width: 73.8%;
+    height: 3%;
+}
+
+.hide {
+    
+}
