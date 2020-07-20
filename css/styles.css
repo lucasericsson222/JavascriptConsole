@@ -3,28 +3,34 @@
 #map {
     position: fixed;
     right: 0px;
-    width: 25%;
-    height:97%;
+    margin-right: .55vw;
+    width: 24.45vw;
+    height:97.6vh;
     background-color: grey;
 }
 #terminal {
     background-color: black;
     color: white;
-    width: 73.5%;
+    width: 72.45vw;
     font-family: monospace;
-    padding-left: 1.5%;
-    padding-top: .5%;
-    margin-bottom: 2%;
+    padding-left: 1.5vw;
+    padding-top: .5vh;
     overflow: auto;
 
 }
 #text-input {
     position:fixed;
-    bottom: 1.44%;
-    width: 73.8%;
-    height: 3%;
+    bottom: 1.44vh;
+    width: 72.1vw;
+    padding-left:1.5vw;
+    height: 3vh;
+    font-family: monospace;
 }
 
 .hide {
-    
+    overflow: auto;
+    width: 100vw;
+    height: 94vh;
+    margin-bottom: 2vh;
+    position: fixed;
 }
