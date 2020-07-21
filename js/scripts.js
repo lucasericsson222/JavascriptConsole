@@ -1,6 +1,9 @@
+"use strict";
+
+
 let command = document.getElementById("text-input");
 let terminal = document.getElementById("terminal");
-let previous_commands = [];
+let previous_commands = []; 
 let previous_position = 0;
 
 command.addEventListener("keydown", (event) => {
@@ -8,21 +11,22 @@ command.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         // handle command submission
         event.preventDefault();
-        if (command.value != "") {
+        if (command.value != "") { // only do stuff if the text input box has stuff in it
         
-            if (previous_commands[previous_commands.length - 1] != command.value) {
+            if (previous_commands[previous_commands.length - 1] != command.value) { // only track commands that aren't the same as the previous command
                 previous_commands.push(command.value);
             }
-            terminal.insertAdjacentHTML("beforeend", "<p>" + command.value + "</p>");
+            // display that the command that has been entered
+            print(command.value);
         }
-        command.value = "";
-        terminal.scrollTop = terminal.scrollHeight;
-        previous_position = 0;
+        command.value = ""; // reset the text input box
+        terminal.scrollTop = terminal.scrollHeight; // ensure that the terminal follows the new inputs
+        previous_position = 0; 
     }
     if (event.key === "ArrowUp") {
         // get previous command
         event.preventDefault();
-        if (previous_commands.length + previous_position != 0){
+        if (previous_commands.length + previous_position != 0){ //only go to the previous command if there is a previous command
         previous_position -=1;
         }
         command.value = previous_commands[previous_commands.length + previous_position];
@@ -30,20 +34,31 @@ command.addEventListener("keydown", (event) => {
     if (event.key === "ArrowDown") {
         // go the other way with previous commands
         event.preventDefault();
-        if (previous_position < 0) {
+        if (previous_position < 0) { // don't go past the current line
             previous_position += 1;
             
         }
-        if (previous_position < 0) {
+        if (previous_position < 0) {  //only show options that aren't the regular one
             command.value = previous_commands[previous_commands.length + previous_position];
         } else {
-            command.value = "";
+            command.value = ""; // otherwise display the blank regular one
         }
     
     }
 
 });
 
+function print(message) {
+    terminal.insertAdjacentHTML("beforeend", "<p>" + message + "</p>");
+}
+
+
+
+
+
+
+
+// canvas part
 
 function setupCanvas(canvas) {
     // Get the device pixel ratio, falling back to 1.
@@ -61,9 +76,14 @@ function setupCanvas(canvas) {
     return ctx;
 }
 
-let map = document.getElementById("map");
-let ctx = setupCanvas(map);
+let map_canvas = document.getElementById("map");
+let ctx = setupCanvas(map_canvas);
 
 ctx.fillStyle = "#FF0000";
 ctx.fillRect(100, 100, 200, 200);
 
+map = {
+
+
+
+}
