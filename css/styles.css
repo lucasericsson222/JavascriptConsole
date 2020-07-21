@@ -11,7 +11,7 @@
     background-color: black;
     color: white;
     width: 72.45vw;
-    height: 100%;
+    height: 99.5%;
     font-family: monospace;
     padding-left: 1.5vw;
     padding-top: .5vh;
@@ -30,7 +30,7 @@
 .hide {
     overflow: auto;
     width: 99.5vw;
-    height: 94vh;
+    height: 94.1vh;
     margin-bottom: 2vh;
     position: fixed;
 }

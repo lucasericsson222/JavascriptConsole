@@ -18,9 +18,10 @@ command.addEventListener("keydown", (event) => {
             }
             // display that the command that has been entered
             print(command.value);
+            use_command(command.value);
         }
         command.value = ""; // reset the text input box
-        terminal.scrollTop = terminal.scrollHeight; // ensure that the terminal follows the new inputs
+        
         previous_position = 0; 
     }
     if (event.key === "ArrowUp") {
@@ -48,16 +49,51 @@ command.addEventListener("keydown", (event) => {
 
 });
 
+// print stuff duh
 function print(message) {
     terminal.insertAdjacentHTML("beforeend", "<p>" + message + "</p>");
+    terminal.scrollTop = terminal.scrollHeight; // ensure that the terminal follows the new inputs
+}
+
+// do stuff on input
+function use_command(command) {
+    if (command === "DOOOM") {
+        for(let i = 0; i < 10; i++)
+        {
+            print("DOOOOOOOOOOOOOOM");
+        }
+    } else if (command === "clear") {
+        terminal.innerHTML = "";
+    }
+
 }
 
 
 
+let seconds_passed;
+let old_time_stamp;
+let fps;
+function game_loop(time_stamp) {
+    // calculate the number of seconds passed since the last frame
+    seconds_passed = (time_stamp-old_time_stamp) / 1000;
+    old_time_stamp = time_stamp;
+
+    // calculate fps
+    fps = Math.round(1/seconds_passed);
+
+    window.requestAnimationFrame(gameLoop);
+}
+
+game_loop();
 
 
 
 
+
+
+
+
+/* canvas
 // canvas part
 
 function setupCanvas(canvas) {
@@ -78,12 +114,11 @@ function setupCanvas(canvas) {
 
 let map_canvas = document.getElementById("map");
 let ctx = setupCanvas(map_canvas);
-
-ctx.fillStyle = "#FF0000";
-ctx.fillRect(100, 100, 200, 200);
+// draw a red square
+//ctx.fillStyle = "#FF0000";
+//ctx.fillRect(100, 100, 200, 200);
 
 map = {
 
-
-
 }
+*/
