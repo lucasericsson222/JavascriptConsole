@@ -8,10 +8,7 @@ cons.command.addEventListener("keydown", event  => {input.use_event(event)});
 
 
 var my_room = new room.room();
-my_room.id = 1;
-my_room.name = "HELLO WORLD";
-my_room.desc = "LONG DESCRIPTION </br> isn't this dual line cool </br> probably will change this one day to allow </br> multiline without html";
-my_room.coord = [1,1,1];
-my_room.print_desc();
+my_room.load("../js/json/my_room.json");
+
 
 player.set_current_room(my_room);
