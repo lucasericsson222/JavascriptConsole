@@ -16,7 +16,6 @@
     padding-left: 1.5vw;
     padding-top: .5vh;
     overflow: auto;
-    line-height: .5em;
 }
 #text-input {
     position:fixed;

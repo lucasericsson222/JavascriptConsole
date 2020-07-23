@@ -1,5 +1,6 @@
 ;"use strict";
 import * as cons from "./inout.mjs";
+
 // +++++++++++++++++++++++++++++++++++++++++++++++
 // INPUT PRESSES
 export let command = document.getElementById("text-input");
@@ -8,6 +9,9 @@ export let previous_commands = [];
 export let previous_position = 0;
 export var print_fuct = cons.log;
 export var parse_func = cons.use_command;
+
+
+
 export function use_event(event) {
     
     if (event.key === "Enter") {
@@ -23,7 +27,6 @@ export function use_event(event) {
             cons.use_command(command.value);
         }
         command.value = ""; // reset the text input box
-        
         previous_position = 0; 
     }
     if (event.key === "ArrowUp") {
@@ -50,10 +53,3 @@ export function use_event(event) {
     }
 
 };
-
-export function set_print_func(func) {
-    print_func = func;
-}
-export function set_parse_func(func) {
-    parse_func = func;
-}

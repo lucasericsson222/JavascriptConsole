@@ -1,6 +1,8 @@
+import * as player from "./player.mjs";
 
 export let command = document.getElementById("text-input");
 export let terminal = document.getElementById("terminal");
+
 
 // print stuff duh
 export function log(message) {
@@ -15,6 +17,9 @@ export function use_command(command) {
         }
     } else if (command === "clear") {
         terminal.innerHTML = "";
-    } 
+    } else if (command === "room") {
+        player.current_room.print_desc();
+    }
 
 }
+
